@@ -19,4 +19,12 @@ class TestAddString < Minitest::Test
     sum = add(str)
     assert_equal 3, sum
   end
+
+  def test_string_with_negative_numbers
+    str = "//;\n1;2,-3;-4"
+    error = assert_raises(RuntimeError) do
+      add(str)
+    end
+    assert_equal("negative numbers not allowed -3,-4", error.message)
+  end
 end
