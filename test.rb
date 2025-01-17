@@ -13,4 +13,10 @@ class TestAddString < Minitest::Test
     sum = add(str)
     assert_equal 20, sum
   end
+
+  def test_comma_and_new_line_separated_string
+    str = "1\n2,3"
+    sum = add(str)
+    assert_equal 6, sum
+  end
 end
