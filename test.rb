@@ -14,9 +14,9 @@ class TestAddString < Minitest::Test
     assert_equal 20, sum
   end
 
-  def test_comma_and_new_line_separated_string
-    str = "1\n2,3"
+  def test_delimiter_separated_string
+    str = "//;\n1;2"
     sum = add(str)
-    assert_equal 6, sum
+    assert_equal 3, sum
   end
 end
